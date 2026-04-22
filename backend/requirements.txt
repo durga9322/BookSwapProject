@@ -1,4 +1,12 @@
 flask
-numpy
+flask-cors
+flask-jwt-extended
+pymysql
+bcrypt
+scikit-learn
 pandas
+numpy
+joblib
+python-dotenv
+cryptography
 gunicorn
