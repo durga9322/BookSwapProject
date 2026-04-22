@@ -9,7 +9,10 @@ app.config["JWT_TOKEN_LOCATION"] = ["headers"]
 app.config["JWT_HEADER_NAME"] = "Authorization"
 app.config["JWT_HEADER_TYPE"] = "Bearer"
 
-CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000"}}, supports_credentials=True)
+CORS(app, resources={r"/api/*": {"origins": [
+    "http://localhost:3000",
+    "https://book-swap-project-zeta.vercel.app"
+]}}, supports_credentials=True)
 JWTManager(app)
 
 from routes.auth import auth_bp
