@@ -15,7 +15,7 @@ export default function RecommendationSection() {
     if (val.length >= 2) {
       try {
         const res = await fetch(
-          "http://localhost:5000/api/recommend/search?q=" + encodeURIComponent(val)
+          `${process.env.REACT_APP_API_URL}/api/recommend/search?q=` + encodeURIComponent(val)
         );
         const data = await res.json();
         setSuggestions(data.suggestions || []);
@@ -31,7 +31,7 @@ export default function RecommendationSection() {
     setLoading(true);
     setError("");
     try {
-      const res = await fetch("http://localhost:5000/api/recommend/by-book", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/recommend/by-book`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ title: t })
