@@ -12,7 +12,7 @@ def get_conn():
         host=Config.MYSQL_HOST,
         user=Config.MYSQL_USER,
         password=Config.MYSQL_PASSWORD,
-        database=Config.MYSQL_DB,
+        port=Config.MYSQL_PORT, database=Config.MYSQL_DB,
         cursorclass=pymysql.cursors.DictCursor
     )
 
